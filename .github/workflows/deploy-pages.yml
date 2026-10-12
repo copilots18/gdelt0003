@@ -29,9 +29,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Prepare default video batch
+      - name: Generate default batch
         run: |
-          python3 scripts/create_short.py --data data/highlights.json --count 3 --authorize > data/generated/default_batch.json
+          python3 scripts/publish_short.py --data data/highlights.json --count 3 --output data/generated/default_batch.json
           python3 -m json.tool data/generated/default_batch.json > /dev/null
 
       - name: Setup Pages

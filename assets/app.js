@@ -1,6 +1,6 @@
 const state = {
   data: [],
-  authorized: false,
+  authorized: true,
   query: '',
   tag: 'all'
 };
@@ -72,15 +72,16 @@ function filterItems() {
 
   renderCards(items);
   renderBatch(items);
-  els.modeIndicator.textContent = state.authorized ? 'create' : 'discover';
-  els.authStatus.textContent = state.authorized ? '已授权，默认执行 3 条批量生成' : '未授权，默认仅发现候选';
+  els.modeIndicator.textContent = state.authorized ? 'ready' : 'preview';
+  els.authStatus.textContent = state.authorized ? '已生成默认批次，可直接提交到 Pages' : '预览模式：仅展示候选，不生成内容';
   document.querySelector('.auth-dot').style.background = state.authorized ? '#34d399' : '#fbbf24';
 }
 
 async function loadHighlights() {
-  const response = await fetch('./data/highlights.json');
-  const data = await response.json();
-  state.data = data;
+  const response = await fetch('./data/generated/default_batch.json');
+  const payload = await response.json();
+  const data = payload.batch || payload;
+  state.data = Array.isArray(data) ? data : [];
   filterItems();
 }
 
@@ -97,11 +98,6 @@ els.tagFilter.addEventListener('change', (event) => {
 els.loadDefaultBatch.addEventListener('click', () => {
   state.authorized = true;
   filterItems();
-  const batch = defaultBatch(state.data);
-  const first = batch[0];
-  if (first) {
-    console.log('Default batch prepared:', first);
-  }
 });
 
 els.toggleRaw.addEventListener('click', () => {

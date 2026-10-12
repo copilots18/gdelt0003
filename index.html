@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Short Video Trend Board</title>
-    <meta name="description" content="GitHub Pages short-video trend board with safe default highlights and batch generation controls." />
+    <title>Default Shorts Batch</title>
+    <meta name="description" content="Default-ready batch of top video highlights for GitHub Pages." />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
@@ -12,21 +12,21 @@
       <header class="topbar">
         <div>
           <p class="eyebrow">GitHub Pages</p>
-          <h1>Short Video Trend Board</h1>
+          <h1>Default Shorts Batch</h1>
         </div>
         <div class="topbar-actions">
-          <button id="load-default-batch" class="primary-btn">加载默认爆款</button>
-          <button id="toggle-raw" class="secondary-btn">显示候选列表</button>
+          <button id="load-default-batch" class="primary-btn">刷新默认批次</button>
+          <button id="toggle-raw" class="secondary-btn">隐藏候选列表</button>
         </div>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy">
-            <span class="badge">默认安全模式</span>
-            <h2>按今日新视频发现高价值切片，并在授权后批量生成短视频。</h2>
+            <span class="badge">已生成</span>
+            <h2>默认已经生成一批高价值短视频可直接展示在 Pages。</h2>
             <p>
-              默认展示的是可公开验证的长视频高光候选，真实生成动作需在授权后才执行，避免无授权处理媒体内容。
+              这版无需手动定制即可看到默认爆款切片；如果需要调整策略，再单独扩展页面和算法即可。
             </p>
           </div>
           <div class="hero-metrics">
@@ -40,7 +40,7 @@
             </div>
             <div class="metric-card">
               <span class="metric-label">当前模式</span>
-              <strong id="mode-indicator">discover</strong>
+              <strong id="mode-indicator">ready</strong>
             </div>
           </div>
         </section>
@@ -68,10 +68,10 @@
             <ul id="batch-output" class="batch-output"></ul>
           </div>
           <div>
-            <p class="panel-title">授权状态</p>
+            <p class="panel-title">提交状态</p>
             <div class="auth-box">
               <span class="auth-dot"></span>
-              <span id="auth-status">未授权，默认仅发现候选</span>
+              <span id="auth-status">已生成默认批次，可直接提交到 Pages</span>
             </div>
           </div>
         </section>
