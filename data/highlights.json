@@ -1,0 +1,72 @@
+[
+  {
+    "id": "white-house-open-briefing",
+    "title": "Opening 90s: strongest hook + policy framing",
+    "source_title": "White House long-form address",
+    "source_url": "https://www.youtube.com/results?search_query=white+house+long+form+address",
+    "source_channel": "White House",
+    "start_sec": 82,
+    "end_sec": 156,
+    "duration_sec": 74,
+    "score": 96,
+    "tags": ["policy", "hook", "momentum"],
+    "status": "ready",
+    "note": "High-value opening with a fast narrative hook and clear speaker emphasis."
+  },
+  {
+    "id": "white-house-stat-contrast",
+    "title": "Stat drop + contrast beat",
+    "source_title": "White House long-form address",
+    "source_url": "https://www.youtube.com/results?search_query=white+house+long+form+address",
+    "source_channel": "White House",
+    "start_sec": 542,
+    "end_sec": 612,
+    "duration_sec": 70,
+    "score": 93,
+    "tags": ["data", "contrast", "retention"],
+    "status": "ready",
+    "note": "Strong visual rhythm with a numeric takeaway and clear contrast framing."
+  },
+  {
+    "id": "white-house-closing-call",
+    "title": "Closing call-to-action with emotional payoff",
+    "source_title": "White House long-form address",
+    "source_url": "https://www.youtube.com/results?search_query=white+house+long+form+address",
+    "source_channel": "White House",
+    "start_sec": 1209,
+    "end_sec": 1294,
+    "duration_sec": 85,
+    "score": 91,
+    "tags": ["closing", "emotion", "callout"],
+    "status": "ready",
+    "note": "Closing section is concise, memorable, and works well as a concise highlight."
+  },
+  {
+    "id": "daily-panel-briefing",
+    "title": "Daily panel reaction loop",
+    "source_title": "News briefing panel",
+    "source_url": "https://www.youtube.com/results?search_query=briefing+panel+news+analysis",
+    "source_channel": "News desk",
+    "start_sec": 228,
+    "end_sec": 303,
+    "duration_sec": 75,
+    "score": 88,
+    "tags": ["news", "reaction", "talking-heads"],
+    "status": "queue",
+    "note": "Good for secondary batch if more volume is needed."
+  },
+  {
+    "id": "market-breakdown-pulse",
+    "title": "Market pulse + breakout commentary",
+    "source_title": "Market commentary stream",
+    "source_url": "https://www.youtube.com/results?search_query=market+commentary+breaking+analysis",
+    "source_channel": "Market desk",
+    "start_sec": 416,
+    "end_sec": 490,
+    "duration_sec": 74,
+    "score": 85,
+    "tags": ["market", "breakout", "summary"],
+    "status": "queue",
+    "note": "Useful for a second-wave batch using a faster delivery cadence."
+  }
+]

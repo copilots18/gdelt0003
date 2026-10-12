@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Short Video Trend Board</title>
+    <meta name="description" content="GitHub Pages short-video trend board with safe default highlights and batch generation controls." />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">GitHub Pages</p>
+          <h1>Short Video Trend Board</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="load-default-batch" class="primary-btn">加载默认爆款</button>
+          <button id="toggle-raw" class="secondary-btn">显示候选列表</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="badge">默认安全模式</span>
+            <h2>按今日新视频发现高价值切片，并在授权后批量生成短视频。</h2>
+            <p>
+              默认展示的是可公开验证的长视频高光候选，真实生成动作需在授权后才执行，避免无授权处理媒体内容。
+            </p>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-label">已筛选</span>
+              <strong id="total-count">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">默认批量</span>
+              <strong id="default-batch-size">3</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">当前模式</span>
+              <strong id="mode-indicator">discover</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="toolbar">
+          <label class="search-box">
+            <span>搜索关键词</span>
+            <input id="search-input" type="text" placeholder="例如：White House, policy, market" />
+          </label>
+          <label class="search-box compact">
+            <span>筛选标签</span>
+            <select id="tag-filter">
+              <option value="all">全部</option>
+              <option value="policy">policy</option>
+              <option value="market">market</option>
+              <option value="news">news</option>
+              <option value="hook">hook</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="status-panel">
+          <div>
+            <p class="panel-title">默认批次输出</p>
+            <ul id="batch-output" class="batch-output"></ul>
+          </div>
+          <div>
+            <p class="panel-title">授权状态</p>
+            <div class="auth-box">
+              <span class="auth-dot"></span>
+              <span id="auth-status">未授权，默认仅发现候选</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="video-grid" class="video-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
