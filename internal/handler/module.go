@@ -32,6 +32,7 @@ var Module = fx.Module("handler",
 	fx.Provide(NewUpdaterHandler),
 	fx.Provide(NewFeishuHandler),
 	fx.Provide(NewTTSHandler),
+	fx.Provide(NewShortsConfirmHandler),
 
 	// ── Service dependencies consumed only by handlers ────────────────────
 	fx.Provide(func(db *gorm.DB, logger *zap.Logger, cfg *config.AppConfig) *biliaccount.Service {

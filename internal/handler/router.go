@@ -47,6 +47,7 @@ type RouterParams struct {
 	VideoProcess     *VideoProcessHandler
 	YouTube          *YouTubeHandler
 	Feishu           *FeishuHandler
+	ShortsConfirm    *ShortBatchConfirmHandler
 }
 
 // registerRoutes is the single fx.Invoke entry-point for all HTTP route
@@ -108,6 +109,7 @@ func registerRoutes(p RouterParams) {
 	p.Feishu.RegisterRoutes(r)
 
 	p.TTS.RegisterRoutes(r)
+	p.ShortsConfirm.RegisterRoutes(r)
 
 	// Static / SPA fallback must be registered last (NoRoute catch-all)
 	server.ServeStaticWeb(r, p.Logger, p.Config.Debug)

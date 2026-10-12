@@ -1,12 +1,14 @@
-name: Deploy static Pages
+name: Build default highlight videos and deploy Pages
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 1'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -15,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -29,10 +31,24 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Generate default batch
+      - name: Install FFmpeg and yt-dlp
         run: |
-          python3 scripts/publish_short.py --data data/highlights.json --count 3 --output data/generated/default_batch.json
-          python3 -m json.tool data/generated/default_batch.json > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install yt-dlp
+
+      - name: Generate default highlight clips
+        run: |
+          python3 scripts/generate_default_video_batch.py --repo-root "$GITHUB_WORKSPACE" --output-dir generated
+          ls -R generated
+
+      - name: Commit generated media if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/generated/default_batch.json generated || true
+          git diff --cached --quiet || git commit -m "chore: refresh default highlight batch" || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -3,15 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Short Video Batch Confirm</title>
-    <meta name="description" content="Default-ready short video batch preview and confirm action." />
+    <title>默认短视频批次确认</title>
+    <meta name="description" content="默认短视频高光批次，直接在页内确认并提交到后台。" />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="confirm-shell">
-      <a class="confirm-button" href="https://github.com/difyz9/ytb2bili/actions" target="_blank" rel="noreferrer">
-        前往 GitHub Actions 确认运行
-      </a>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">SHORT VIDEO DEFAULT BATCH</p>
+          <h1>默认高光候选</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="load-default-batch" class="secondary-btn" type="button">重载默认批次</button>
+          <button id="confirm-batch" class="primary-btn" type="button">确认提交</button>
+        </div>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy">
+          <p class="eyebrow">READY / NO ACTION REDIRECT</p>
+          <h2>已生成一批默认短视频候选，直接在当前页确认，不跳转到 GitHub Actions。</h2>
+          <p>
+            这版默认使用公开长视频的高光切片逻辑；默认数据已在仓库里准备好，用户只需在页面内确认提交，随后由后台接收确认请求继续处理后续剪辑和发布。
+          </p>
+        </section>
+
+        <aside class="hero-metrics">
+          <div class="metric-card">
+            <div class="metric-label">候选数</div>
+            <strong id="total-count">0</strong>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">状态</div>
+            <strong id="status-pill">ready</strong>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">来源</div>
+            <strong>White House demo</strong>
+          </div>
+        </aside>
+      </main>
+
+      <section class="status-panel">
+        <div class="status-row">
+          <span class="auth-dot"></span>
+          <span id="auth-status">已生成默认批次，可直接提交到后台确认</span>
+        </div>
+        <ul id="batch-output" class="batch-output"></ul>
+      </section>
+
+      <section id="video-grid" class="video-grid" aria-live="polite"></section>
     </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/app.js"></script>
   </body>
 </html>
