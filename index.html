@@ -3,83 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Shorts Batch</title>
-    <meta name="description" content="Default-ready batch of top video highlights for GitHub Pages." />
+    <title>Short Video Batch Confirm</title>
+    <meta name="description" content="Default-ready short video batch preview and confirm action." />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">GitHub Pages</p>
-          <h1>Default Shorts Batch</h1>
-        </div>
-        <div class="topbar-actions">
-          <button id="load-default-batch" class="primary-btn">刷新默认批次</button>
-          <button id="toggle-raw" class="secondary-btn">隐藏候选列表</button>
-        </div>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <span class="badge">已生成</span>
-            <h2>默认已经生成一批高价值短视频可直接展示在 Pages。</h2>
-            <p>
-              这版无需手动定制即可看到默认爆款切片；如果需要调整策略，再单独扩展页面和算法即可。
-            </p>
-          </div>
-          <div class="hero-metrics">
-            <div class="metric-card">
-              <span class="metric-label">已筛选</span>
-              <strong id="total-count">0</strong>
-            </div>
-            <div class="metric-card">
-              <span class="metric-label">默认批量</span>
-              <strong id="default-batch-size">3</strong>
-            </div>
-            <div class="metric-card">
-              <span class="metric-label">当前模式</span>
-              <strong id="mode-indicator">ready</strong>
-            </div>
-          </div>
-        </section>
-
-        <section class="toolbar">
-          <label class="search-box">
-            <span>搜索关键词</span>
-            <input id="search-input" type="text" placeholder="例如：White House, policy, market" />
-          </label>
-          <label class="search-box compact">
-            <span>筛选标签</span>
-            <select id="tag-filter">
-              <option value="all">全部</option>
-              <option value="policy">policy</option>
-              <option value="market">market</option>
-              <option value="news">news</option>
-              <option value="hook">hook</option>
-            </select>
-          </label>
-        </section>
-
-        <section class="status-panel">
-          <div>
-            <p class="panel-title">默认批次输出</p>
-            <ul id="batch-output" class="batch-output"></ul>
-          </div>
-          <div>
-            <p class="panel-title">提交状态</p>
-            <div class="auth-box">
-              <span class="auth-dot"></span>
-              <span id="auth-status">已生成默认批次，可直接提交到 Pages</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="video-grid" class="video-grid" aria-live="polite"></section>
-      </main>
+    <div class="confirm-shell">
+      <a class="confirm-button" href="https://github.com/difyz9/ytb2bili/actions" target="_blank" rel="noreferrer">
+        前往 GitHub Actions 确认运行
+      </a>
     </div>
-
-    <script src="assets/app.js"></script>
   </body>
 </html>
